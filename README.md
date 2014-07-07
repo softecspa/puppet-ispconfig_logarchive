@@ -60,6 +60,23 @@ This  are the default config options passed by default:
     * time\_slice\_format   => %Y%m%d%H
     * flush\_interval       => 15m
  * **postfix**
-
+  * input
+    * path      => /var/log/mail.log
+    * pos\_file  => /var/tmp/mail\_fluentd.pos
+  * output
+    * buffer\_type          => memory
+    * buffer\_chunk\_limit  => 64m
+    * time\_slice\_format   => %Y%m%d%H
+    * flush\_interval       => 15m
+ * **proftpd**
+  * input
+    * path      => /var/log/proftpd/proftpd.log
+    * pos\_file  => /var/tmp/proftpd_fluentd.pos
+  * output
+    * buffer\_type          => file
+    * buffer\_path          => /var/log/td-agent/buffer/s3\_proftpd
+    * time\_slice\_format   => %Y%m%d%H
+    * time\_slice\_wait     => '5m
+    * buffer\_chunk\_limit  => '32m
 ## Limitations
 Actually only **fluentd** data collector and **s3** destination plugin are available
