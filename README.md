@@ -49,7 +49,7 @@ Ex2: if you want to define or override config parameter for apache2 log destinat
 This  are the default config options passed by default:
  * apache2
   * input
-   * bbb
+    * bbb
 
 ## Limitations
 Actually only **fluentd** data collector and **s3** destination plugin are available
