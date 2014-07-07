@@ -14,6 +14,6 @@ class ispconfig_logarchive::fluentd::apache2 {
   }
   # il parametro format indica il nostro logformat
 
-  create_resources("ispconfig_logarchive::fluentd::${ispconfig_logarchive::destination}::apache2",{'apache2' => {'custom_config' => $ispconfig_logarchive::fluentd_apache2_output_opts}})
+  create_resources("ispconfig_logarchive::fluentd::${ispconfig_logarchive::destination}::apache2",{'apache2' => {'custom_config' => $ispconfig_logarchive::fluentd_apache2_output_opts, 'filter_config' => $ispconfig_logarchive::fluentd_apache2_filter_opts}})
 
 }

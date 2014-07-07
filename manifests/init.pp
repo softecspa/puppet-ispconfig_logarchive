@@ -117,6 +117,7 @@ class ispconfig_logarchive (
   $auth                           = true,
   $puppet                         = true,
   $fluentd_apache2_input_opts     = {},
+  $fluentd_apache2_filter_opts    = {},
   $fluentd_apache2_output_opts    = {},
   $fluentd_proftpd_input_opts     = {},
   $fluentd_proftpd_output_opts    = {},

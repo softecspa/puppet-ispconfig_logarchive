@@ -18,6 +18,11 @@ class ispconfig_logarchive::params {
     'time_slice_format'   => '%Y%m%d%H',# Flusha con formato orario. In assenza di flush_interval questo valore indica anche ogni quanto flushare (http://docs.fluentd.org/articles/buffer-plugin-overview#time-sliced-plugin-overview)
     'flush_interval'      => '15m',      # Flusha ogni 15 minuti o al raggiungimento di buffer_chunk_limit
   }
+
+  $apache2_fluentd_filter_defaults = {
+    'exclude1'  => 'agent .*(dummy|nagios).*',
+    'exclude2'  => "client $::logarchive_host_exclude_regexp"
+  }
   #######################################
 
   ### POSTFIX ###########################
