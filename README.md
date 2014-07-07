@@ -71,12 +71,43 @@ This  are the default config options passed by default:
  * **proftpd**
   * input
     * path      => /var/log/proftpd/proftpd.log
-    * pos\_file  => /var/tmp/proftpd_fluentd.pos
+    * pos\_file  => /var/tmp/proftpd\_fluentd.pos
   * output
     * buffer\_type          => file
     * buffer\_path          => /var/log/td-agent/buffer/s3\_proftpd
     * time\_slice\_format   => %Y%m%d%H
-    * time\_slice\_wait     => '5m
-    * buffer\_chunk\_limit  => '32m
+    * time\_slice\_wait     => 5m
+    * buffer\_chunk\_limit  => 32m
+ * **proftpd\_tls**
+  * input
+    * path      => /var/log/proftpd/tls.log
+    * pos\_file => /var/tmp/proftpd\_tls\_fluentd.pos
+  * output
+    * buffer\_type         => file
+    * buffer\_path         => /var/log/td-agent/buffer/s3\_proftpd\_tls
+    * time\_slice\_format  => %Y%m%d%H
+    * time\_slice\_wait    => 5m
+    * buffer\_chunk\_limit => 32m
+ * **auth.log**
+  * input
+    * path      => /var/log/auth.log
+    * pos\_file => /var/tmp/auth\_fluentd.pos
+  * output
+    * buffer\_type         => file
+    * buffer\_path         => /var/log/td-agent/buffer/s3\_auth
+    * time\_slice\_format  => %Y%m%d%H
+    * time\_slice\_wait    => 5m
+    * buffer\_chunk\_limit => 32m
+ * **puppet-run**
+  * input
+    * path      => /var/log/puppet/puppet-run.log
+    * pos\_file => /var/tmp/puppet-run\_fluentd.pos
+  * output
+    * buffer\_type         => file
+    * buffer\_path         => /var/log/td-agent/buffer/s3\_puppet-run
+    * time\_slice\_format  => %Y%m%d%H
+    * time\_slice\_wait    => 50m
+    * buffer\_chunk\_limit => 32m
+
 ## Limitations
 Actually only **fluentd** data collector and **s3** destination plugin are available
