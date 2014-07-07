@@ -36,7 +36,7 @@ if destination is s3 and s3\_logpath is not passed, default value will use $clus
     * logs/${cluster}/${::hostname}/
 
 ##Usage
-Each config parameter for each managed logfile can be defined or overrided passing an hash to the relative class parameter:
+Each parameters for each managed logfile can be defined or overrided by passing an hash to the relative class parameter:
  * $datacollector\_$servicename\_$(input|output)\_opts
 
 Ex1: if you want to define or override config parameter for apache2 log source in fluentd, you can do this using the hash parameter:
@@ -44,6 +44,8 @@ Ex1: if you want to define or override config parameter for apache2 log source i
 
 Ex2: if you want to define or override config parameter for apache2 log destination in fluentd, you can do this using the hash parameter:
  * fluentd\_apache2\_output\_opts
+
+**NOTE: apache2 has also a filter level and only for apache2 is customizable the hash fluentd\_apache\_filter\_opts**
 
 ### Default config options
 This  are the default config options passed by default:
