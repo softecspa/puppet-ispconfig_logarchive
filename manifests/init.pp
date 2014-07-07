@@ -42,6 +42,9 @@
 # [*fluentd_apache2_input_opts*]
 #   hash used to pass configuration at source level for apache2 log management with a fluentd data collector. This hash will be merged with, and override, the default (see README)
 #
+# [*fluentd_apache2_filter_opts*]
+#   hash used to pass configuration at filter level for apache2 log management with a fluentd data collector. This hash will be merged with, and override, the default (see README)
+#
 # [*fluentd_apache2_output_opts*]
 #   hash used to pass configuration at destination level for apache2 log management with a fluentd data collector. This hash will be merged with, and override, the default (see README)
 #
