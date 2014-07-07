@@ -49,7 +49,8 @@ Ex2: if you want to define or override config parameter for apache2 log destinat
 This  are the default config options passed by default:
  * apache2
   * input
-    * bbb
+    * path       => /var/log/httpd/ispconfig\_access_log
+    * pos\_file  => /var/tmp/apache2\_fluentd.pos
 
 ## Limitations
 Actually only **fluentd** data collector and **s3** destination plugin are available
