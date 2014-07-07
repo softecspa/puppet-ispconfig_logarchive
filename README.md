@@ -47,10 +47,19 @@ Ex2: if you want to define or override config parameter for apache2 log destinat
 
 ### Default config options
 This  are the default config options passed by default:
- * apache2
+ * **apache2**
   * input
-    * path       => /var/log/httpd/ispconfig\_access_log
+    * path       => /var/log/httpd/ispconfig\_access\_log
     * pos\_file  => /var/tmp/apache2\_fluentd.pos
+  * filter
+    * exclude1  => agent .\*(dummy|nagios).\*
+    * exclude2  => client $::logarchive\_host\_exclude\_regexp
+  * output
+    * buffer\_type          => memory
+    * buffer\_chunk\_limit  => 64m
+    * time\_slice\_format   => %Y%m%d%H
+    * flush\_interval       => 15m
+ * **postfix**
 
 ## Limitations
 Actually only **fluentd** data collector and **s3** destination plugin are available
