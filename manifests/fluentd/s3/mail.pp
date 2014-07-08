@@ -7,7 +7,7 @@ define ispconfig_logarchive::fluentd::s3::mail (
     'aws_sec_key' => $ispconfig_logarchive::aws_secret_key,
     's3_bucket'   => $ispconfig_logarchive::s3_logarchive_bucket,
     's3_endpoint' => $ispconfig_logarchive::s3_bucket_endpoint,
-    'path'        => "logs/${cluster}/${::hostname}/mail/"
+    'path'        => "logs/${cluster}/${::hostname}/mail/%Y/%m/%d/"
   }
 
   $default_config = merge ($ispconfig_logarchive::params::mail_fluentd_output_defaults,$s3_settings)

@@ -7,7 +7,7 @@ define ispconfig_logarchive::fluentd::s3::proftpd_tls (
     'aws_sec_key' => $ispconfig_logarchive::aws_secret_key,
     's3_bucket'   => $ispconfig_logarchive::s3_logarchive_bucket,
     's3_endpoint' => $ispconfig_logarchive::s3_bucket_endpoint,
-    'path'        => "logs/${cluster}/${::hostname}/proftpd_tls/"
+    'path'        => "logs/${cluster}/${::hostname}/proftpd_tls/%Y/%m/%d/"
   }
 
   $default_config = merge ($ispconfig_logarchive::params::proftpd_tls_fluentd_output_defaults,$s3_settings)

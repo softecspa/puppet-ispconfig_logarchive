@@ -8,7 +8,7 @@ define ispconfig_logarchive::fluentd::s3::apache2 (
     'aws_sec_key' => $ispconfig_logarchive::aws_secret_key,
     's3_bucket'   => $ispconfig_logarchive::s3_logarchive_bucket,
     's3_endpoint' => $ispconfig_logarchive::s3_bucket_endpoint,
-    'path'        => "logs/${cluster}/${::hostname}/apache2/"
+    'path'        => "logs/${cluster}/${::hostname}/apache2/%Y/%m/%d/"
   }
 
   $default_config = merge ($ispconfig_logarchive::params::apache2_fluentd_output_defaults,$s3_settings)
